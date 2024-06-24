@@ -2,6 +2,7 @@ import { useState } from "react";
 import Input from "../inputs/Input";
 import axios from "../../api/axios";
 import ErrorText from "../feedback/ErrorText";
+import LoadingSpinner from "../feedback/LoadingSpinner";
 
 const login = async (username: string, password: string) => {
   const response = await axios.post("/auth", { username, password });
@@ -40,7 +41,7 @@ const LoginForm = () => {
         disabled={!username || !password}
         className="button disabled:cursor-not-allowed"
       >
-        Login
+        {loading ? <LoadingSpinner size="30px" /> : "Login"}
       </button>
     </form>
   );

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { LiaRandomSolid } from "react-icons/lia";
-import DivisionOr from "../../components/DivisionOr";
+import DivisionOr from "../../components/layout/DivisionOr";
 import LoginForm from "../../components/forms/LoginForm";
 
 const Login = () => {
