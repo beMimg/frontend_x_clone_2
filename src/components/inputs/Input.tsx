@@ -1,10 +1,10 @@
 import React from "react";
 import { IInput } from "../../interfaces/input.interface";
 
-const Input = ({ value, setter, placeholder }: IInput) => {
+const Input = ({ value, setter, placeholder, type }: IInput) => {
   return (
     <input
-      type="text"
+      type={type}
       placeholder={placeholder}
       onChange={(e) => setter(e.target.value)}
       value={value}

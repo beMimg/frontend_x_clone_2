@@ -30,8 +30,18 @@ const LoginForm = () => {
 
   return (
     <form className="flex w-full flex-col gap-3" onSubmit={handleSubmit}>
-      <Input value={username} setter={setUsername} placeholder="Username" />
-      <Input value={password} setter={setPassword} placeholder="Password" />
+      <Input
+        value={username}
+        setter={setUsername}
+        placeholder="Username"
+        type="text"
+      />
+      <Input
+        value={password}
+        setter={setPassword}
+        placeholder="Password"
+        type="password"
+      />
       <div className="h-[40px]">
         {error && (
           <ErrorText text="Please make sure you've placed the correct credentials." />
