@@ -3,10 +3,12 @@ import Input from "../inputs/Input";
 import axios from "../../api/axios";
 import ErrorText from "../feedback/ErrorText";
 import LoadingSpinner from "../feedback/LoadingSpinner";
+import { useAuth } from "../../context/authContext";
+import { useNavigate } from "react-router-dom";
 
 const login = async (username: string, password: string) => {
   const response = await axios.post("/auth", { username, password });
-  return response.data;
+  return response;
 };
 
 const LoginForm = () => {
@@ -14,13 +16,21 @@ const LoginForm = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
+  const { setAccessToken } = useAuth();
 
+  const navigate = useNavigate();
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
       setLoading(true);
       setError(false);
-      const data = await login(username, password);
+      const response = await login(username, password);
+      if (response.status === 200 && response.data.accessToken) {
+        const accessToken = response.data.accessToken;
+        console.log(accessToken);
+        setAccessToken(accessToken);
+      }
+      navigate("/", { replace: true });
     } catch (err) {
       setError(true);
     } finally {
