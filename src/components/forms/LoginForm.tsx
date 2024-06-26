@@ -28,8 +28,9 @@ const LoginForm = () => {
       if (response.status === 200 && response.data.accessToken) {
         const accessToken = response.data.accessToken;
         setAccessToken(accessToken);
+        navigate("/", { replace: true });
+        window.location.reload();
       }
-      navigate("/dashboard", { replace: true });
     } catch (err) {
       setError(true);
     } finally {
