@@ -5,6 +5,7 @@ import Register from "./pages/unauthenticated/Register";
 import { useAuth } from "./context/authContext";
 import { Layout } from "./pages/authenticated/Layout";
 import Dashboard from "./pages/authenticated/Dashboard";
+import Profile from "./pages/authenticated/Profile";
 
 function App() {
   const { accessToken } = useAuth();
@@ -22,6 +23,7 @@ function App() {
           <>
             <Route element={<Layout />}>
               <Route path="/" element={<Dashboard />} />
+              <Route path="/profile/:user_id" element={<Profile />} />
             </Route>
           </>
         )}
