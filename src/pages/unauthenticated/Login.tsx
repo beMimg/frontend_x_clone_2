@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { LiaRandomSolid } from "react-icons/lia";
 import DivisionOr from "../../components/layout/DivisionOr";
 import LoginForm from "../../components/forms/LoginForm";
 import GuestLoginButton from "../../components/buttons/GuestLoginButton";
