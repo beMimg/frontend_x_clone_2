@@ -20,8 +20,9 @@ function App() {
           </>
         ) : (
           <>
-            <Route element={<Layout />} />
-            <Route path="/" element={<Dashboard />} />
+            <Route element={<Layout />}>
+              <Route path="/" element={<Dashboard />} />
+            </Route>
           </>
         )}
       </Routes>
