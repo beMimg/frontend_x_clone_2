@@ -4,4 +4,7 @@ export interface IUser {
   first_name: string;
   username: string;
   profile_color: string;
+  utc_creation: string;
+  followings: [];
+  followers: [];
 }

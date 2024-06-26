@@ -23,7 +23,7 @@ function App() {
           <>
             <Route element={<Layout />}>
               <Route path="/" element={<Dashboard />} />
-              <Route path="/profile/:user_id" element={<Profile />} />
+              <Route path="/profile/:visited_id" element={<Profile />} />
             </Route>
           </>
         )}
