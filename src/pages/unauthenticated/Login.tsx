@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { LiaRandomSolid } from "react-icons/lia";
 import DivisionOr from "../../components/layout/DivisionOr";
 import LoginForm from "../../components/forms/LoginForm";
+import GuestLoginButton from "../../components/buttons/GuestLoginButton";
 
 const Login = () => {
   return (
@@ -11,9 +12,9 @@ const Login = () => {
           x
         </Link>
         <h2>Login to X</h2>
-        <button className="button w-[70%]">
-          <LiaRandomSolid /> Sign in as a guest
-        </button>
+        <div className="w-[70%]">
+          <GuestLoginButton />
+        </div>
         <div className="w-[70%]">
           <DivisionOr />
         </div>

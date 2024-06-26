@@ -59,7 +59,7 @@ const LoginForm = () => {
       </div>
       <button
         disabled={!username || !password}
-        className="button disabled:cursor-not-allowed"
+        className="white-button disabled:cursor-not-allowed"
       >
         {loading ? <LoadingSpinner size="30px" /> : "Login"}
       </button>

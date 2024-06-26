@@ -24,6 +24,14 @@
 @tailwind components;
 @tailwind utilities;
 
-.button {
-  @apply flex flex-row items-center justify-center gap-2 rounded-full bg-white p-3 font-semibold text-black;
+.white-button {
+  @apply flex w-full flex-row items-center justify-center gap-2 rounded-full bg-white p-3 font-semibold text-black;
+}
+
+.sky-button {
+  @apply flex w-full flex-row items-center justify-center gap-2 rounded-full bg-sky-600 p-3 font-semibold text-white;
+}
+
+.secondary-text {
+  @apply text-gray-500;
 }
