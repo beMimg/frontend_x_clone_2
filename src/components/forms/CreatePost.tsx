@@ -5,7 +5,7 @@ import LoadingSpinner from "../feedback/LoadingSpinner";
 import useAxiosPrivate from "../../api/useAxiosPrivate";
 import ErrorText from "../feedback/ErrorText";
 
-const DashboardHeaderForm = ({
+const CreatePost = ({
   setRerender,
 }: {
   setRerender: React.Dispatch<React.SetStateAction<number>>;
@@ -83,15 +83,16 @@ const DashboardHeaderForm = ({
           value={text}
           onChange={(e) => setText(e.target.value)}
           maxLength={400}
-          className="w-full resize-none rounded-lg bg-transparent p-2 pr-9 placeholder:text-xl focus:border focus:border-neutral-900 focus:outline-none"
+          className="w-full resize-none rounded-lg bg-transparent p-2 pr-9 text-base focus:border focus:border-neutral-900 focus:outline-none"
         />
         <p
-          className={`absolute right-3 top-0 text-sm text-gray-500 ${
-            disabledButton && "text-red-500"
-          }`}
+          className={`${
+            disabledButton ? "text-red-500" : "secondary-text"
+          } absolute right-3 top-0`}
         >
           {charactersLeft}
         </p>
+        {/* If the usuer wants to post an image, place it above the post button */}
         {imageUrl && (
           <div className="relative flex self-center">
             <button
@@ -118,10 +119,11 @@ const DashboardHeaderForm = ({
             />
             <GrGallery className="relative h-5 w-5 cursor-pointer text-sky-500 transition-all hover:scale-105" />
           </label>
+          {/* If it's loading, content inside the button must be the loadingspinner otherwise "Post" */}
           <button
             onClick={handleSubmit}
-            disabled={disabledButton || charactersLeft === 300 || loading}
-            className="sky-button max-w-[200px]"
+            disabled={disabledButton || loading}
+            className="sky-button max-w-[200px] disabled:cursor-not-allowed"
           >
             {loading ? (
               <LoadingSpinner size={"20px"} color={"white"} />
@@ -138,4 +140,4 @@ const DashboardHeaderForm = ({
   );
 };
 
-export default DashboardHeaderForm;
+export default CreatePost;

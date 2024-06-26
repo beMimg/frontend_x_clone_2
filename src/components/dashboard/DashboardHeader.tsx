@@ -2,7 +2,7 @@ import React from "react";
 import Avatar from "../layout/Avatar";
 
 import { IUser } from "../../interfaces/User.interface";
-import DashboardHeaderForm from "../forms/DashboardHeaderForm";
+import CreatePost from "../forms/CreatePost";
 
 const DashboardHeader = ({
   user,
@@ -12,10 +12,10 @@ const DashboardHeader = ({
   setRerender: React.Dispatch<React.SetStateAction<number>>;
 }) => {
   return (
-    <section className="flex w-full flex-col">
+    <div className="flex w-full flex-col">
       <div className="grid w-full p-2 py-4 lg:grid-cols-2">
         <button className="border-b-2 border-sky-500 pb-1">For you</button>
-        <button className="hidden cursor-not-allowed text-neutral-500 lg:block">
+        <button className="secondary-text hidden cursor-not-allowed lg:block">
           Following
         </button>
       </div>
@@ -24,10 +24,10 @@ const DashboardHeader = ({
           <div className="flex self-start">
             <Avatar user={user} size="40px" />
           </div>
-          <DashboardHeaderForm setRerender={setRerender} />
+          <CreatePost setRerender={setRerender} />
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
