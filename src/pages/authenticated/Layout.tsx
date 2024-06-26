@@ -3,6 +3,7 @@ import Nav from "../../components/layout/Nav";
 import { useUser } from "../../context/userContext";
 import LoadingSpinner from "../../components/feedback/LoadingSpinner";
 import ErrorText from "../../components/feedback/ErrorText";
+import AsideLayout from "../../components/layout/AsideLayout";
 
 export const Layout = () => {
   const { user, loading, error } = useUser();
@@ -17,7 +18,7 @@ export const Layout = () => {
           <Outlet />
         </div>
         <div className="hidden lg:flex">
-          <p>lol</p>
+          <AsideLayout />
         </div>
       </div>
     </div>
