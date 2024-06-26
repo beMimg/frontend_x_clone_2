@@ -2,7 +2,7 @@ import { IUser } from "../../interfaces/User.interface";
 import NavLargeDevices from "../navegation/NavLargeDevices";
 import NavSmallDevices from "../navegation/NavSmallDevices";
 
-const Nav = ({ user }: IUser) => {
+const Nav = ({ user }: { user: IUser }) => {
   return (
     <nav className="w-full lg:h-full">
       <div className="hidden h-full w-full lg:flex">

@@ -2,7 +2,7 @@ import { GoHome, GoPeople, GoPerson } from "react-icons/go";
 import { Link } from "react-router-dom";
 import { IUser } from "../../interfaces/User.interface";
 
-const NavSmallDevices = ({ user }: IUser) => {
+const NavSmallDevices = ({ user }: { user: IUser }) => {
   const LinkStyle =
     "w-full flex items-center justify-center border-r  border-gray-900 h-full";
 

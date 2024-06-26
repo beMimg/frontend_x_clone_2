@@ -1,12 +1,7 @@
+import { IUser } from "../../interfaces/User.interface";
 import { getDesiredColor } from "../../utils/getDesiredColor";
 
-const Avatar = ({
-  user,
-  size,
-}: {
-  user: { profile_color: string; profile_pic_src: string; first_name: string };
-  size: string;
-}) => {
+const Avatar = ({ user, size }: { user: IUser; size: string }) => {
   const finalColor = getDesiredColor(user.profile_color);
 
   return user.profile_pic_src ? (

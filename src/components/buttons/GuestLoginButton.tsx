@@ -35,7 +35,7 @@ const GuestLoginButton = () => {
   return (
     <button onClick={handleGuest} className="white-button">
       {loading ? (
-        <LoadingSpinner size="30px" />
+        <LoadingSpinner color="blue" size="30px" />
       ) : (
         <>
           <LiaRandomSolid />

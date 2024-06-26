@@ -23,7 +23,7 @@ export const Layout = () => {
     </div>
   ) : (
     <div className="flex h-screen w-full items-center justify-center bg-black">
-      {loading && <LoadingSpinner size="50px" />}
+      {loading && <LoadingSpinner color="blue" size="50px" />}
       {error && (
         <ErrorText text="Something went wrong, please try again later" />
       )}

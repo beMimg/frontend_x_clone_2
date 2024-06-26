@@ -6,7 +6,7 @@ import LogoutModal from "../modals/LogoutModal";
 import Avatar from "../layout/Avatar";
 import { IUser } from "../../interfaces/User.interface";
 
-const NavLargeDevices = ({ user }: IUser) => {
+const NavLargeDevices = ({ user }: { user: IUser }) => {
   const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false);
 
   const inactiveStyle =
