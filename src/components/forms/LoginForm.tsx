@@ -27,10 +27,9 @@ const LoginForm = () => {
       const response = await login(username, password);
       if (response.status === 200 && response.data.accessToken) {
         const accessToken = response.data.accessToken;
-        console.log(accessToken);
         setAccessToken(accessToken);
       }
-      navigate("/", { replace: true });
+      navigate("/dashboard", { replace: true });
     } catch (err) {
       setError(true);
     } finally {
