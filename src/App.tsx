@@ -6,7 +6,9 @@ import { useAuth } from "./context/authContext";
 import { Layout } from "./pages/authenticated/Layout";
 import Dashboard from "./pages/authenticated/Dashboard";
 import Profile from "./pages/authenticated/Profile";
-import { ProfilePosts } from "./components/profile/ProfilePosts";
+import { ProfilePosts } from "./pages/authenticated/ProfilePosts";
+import ProfileLikes from "./pages/authenticated/ProfileLikes";
+import ProfileFollowings from "./pages/authenticated/ProfileFollowings";
 
 function App() {
   const { accessToken } = useAuth();
@@ -26,6 +28,9 @@ function App() {
               <Route path="/" element={<Dashboard />} />
               <Route path="/profile/:visited_id" element={<Profile />}>
                 <Route index element={<ProfilePosts />} />
+                <Route path="likes" element={<ProfileLikes />} />
+                <Route path="following" element={<ProfileFollowings />} />
+                {/* <Route path="followers" element={<ProfileFollowers />} /> */}
               </Route>
             </Route>
           </>
