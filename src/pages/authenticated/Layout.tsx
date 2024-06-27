@@ -14,7 +14,7 @@ export const Layout = () => {
         <div className="w-full lg:h-full">
           <Nav user={user} />
         </div>
-        <div className="overflow-auto pb-[60px] lg:pb-0">
+        <div className="mb-[60px] overflow-auto lg:mb-0">
           <Outlet />
         </div>
         <div className="hidden lg:flex">
