@@ -82,6 +82,7 @@ const EditProfileModal = ({
             {imageUrl ? (
               <img
                 src={imageUrl}
+                alt="selected"
                 className="flex h-[100px] w-[100px] rounded-full object-cover object-center"
               />
             ) : (

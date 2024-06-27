@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import useAxiosPrivate from "../../api/useAxiosPrivate";
 import Avatar from "../layout/Avatar";
 import { IUser } from "../../interfaces/User.interface";
+import ErrorText from "../feedback/ErrorText";
 
 const CommentForm = ({
   user,
@@ -42,6 +43,10 @@ const CommentForm = ({
     }
   }
 
+  if (error) {
+    return <ErrorText text="Something went wrong..." />;
+  }
+
   return (
     <div className="mt-2 flex flex-row gap-3 border-b border-gray-700 px-3 pb-3">
       <Avatar user={user} size={"45px"} />
@@ -65,7 +70,7 @@ const CommentForm = ({
         </p>
         <button
           type="submit"
-          disabled={disabledButton || text.length === 0}
+          disabled={disabledButton || text.length === 0 || loading}
           className="h-[40px] self-center rounded-full bg-sky-500 px-3 font-semibold disabled:cursor-not-allowed disabled:bg-sky-700"
         >
           Reply

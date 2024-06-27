@@ -26,7 +26,7 @@ const AsideLayout = () => {
       }
     };
     getTopUsers();
-  }, []);
+  }, [axiosPrivate]);
 
   return (
     <aside className="flex flex-col gap-6 border-l border-gray-700 p-4">
@@ -35,8 +35,8 @@ const AsideLayout = () => {
         <p className="p-2 text-neutral-500">Search</p>
       </div>
       <div className="flex flex-col gap-4 rounded-xl bg-zinc-900 p-4">
-        <h6 className="">Subscribe to Premium</h6>
-        <p className="">
+        <h6>Subscribe to Premium</h6>
+        <p>
           Subscribe to unlock new features and if eligible, recieve a share of
           ads revenue.
         </p>

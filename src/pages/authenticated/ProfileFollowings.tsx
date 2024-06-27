@@ -27,7 +27,7 @@ const ProfileFollowings = () => {
       }
     };
     getFollowings();
-  }, []);
+  }, [axiosPrivate, visited_id]);
 
   if (error) {
     return (

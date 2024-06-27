@@ -33,7 +33,7 @@ const PostComments = ({
       }
     };
     getComments();
-  }, [rerenderOnlyComments]);
+  }, [axiosPrivate, post_id, rerenderOnlyComments]);
 
   if (error) {
     return (

@@ -105,6 +105,7 @@ const CreatePost = ({
             <img
               className="max-h-[400px] rounded-2xl border border-gray-700"
               src={imageUrl}
+              alt="selected"
             ></img>
           </div>
         )}

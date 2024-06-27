@@ -36,7 +36,7 @@ const Profile = () => {
     };
 
     getUser();
-  }, [visited_id, rerender]);
+  }, [axiosPrivate, visited_id, rerender]);
 
   const notActiveStyle = "text-gray-500 p-2";
   const activeStyle =

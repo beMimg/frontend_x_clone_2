@@ -38,7 +38,7 @@ const PostPage = () => {
       }
     };
     getPost();
-  }, [rerender]);
+  }, [axiosPrivate, post_id, rerender]);
 
   if (error) {
     return (
@@ -76,6 +76,7 @@ const PostPage = () => {
                 <img
                   className="flex max-h-[600px] w-auto rounded-2xl border border-gray-700 object-cover object-center"
                   src={post.image_src}
+                  alt="post"
                 ></img>
               )}
               <p className="secondary-text">{formatDate(post.timestamp)}</p>

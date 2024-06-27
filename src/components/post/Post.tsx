@@ -43,6 +43,7 @@ const Post = ({
               <img
                 className="flex max-h-[600px] w-auto rounded-2xl border border-gray-700 object-cover object-center"
                 src={post.image_src}
+                alt="post"
               ></img>
             )}
           </Link>

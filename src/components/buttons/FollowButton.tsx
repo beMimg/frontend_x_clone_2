@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import useAxiosPrivate from "../../api/useAxiosPrivate";
 import { IUser } from "../../interfaces/User.interface";
 import ErrorText from "../feedback/ErrorText";

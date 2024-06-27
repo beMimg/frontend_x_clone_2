@@ -33,7 +33,7 @@ const Explore = () => {
       }
     };
     getUsers();
-  }, [page]);
+  }, [axiosPrivate, page]);
 
   if (error) {
     return (

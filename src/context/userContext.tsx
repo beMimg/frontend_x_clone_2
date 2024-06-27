@@ -32,7 +32,7 @@ const UserProvider = ({ children }: { children: ReactNode }) => {
       };
       getUser();
     }
-  }, [accessToken]);
+  }, [axiosPrivate, accessToken]);
 
   return (
     <UserContext.Provider value={{ user, error, loading }}>

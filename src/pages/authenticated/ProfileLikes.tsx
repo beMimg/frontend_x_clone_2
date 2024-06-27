@@ -32,7 +32,7 @@ const ProfileLikes = () => {
     };
 
     getLikedPosts();
-  }, [rerender, visited_id]);
+  }, [axiosPrivate, rerender, visited_id]);
 
   if (error) {
     return (

@@ -32,7 +32,7 @@ export const ProfilePosts = () => {
     };
 
     getPosts();
-  }, [rerender, visited_id]);
+  }, [axiosPrivate, rerender, visited_id]);
 
   if (error) {
     return (

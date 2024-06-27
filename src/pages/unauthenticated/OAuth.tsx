@@ -15,7 +15,7 @@ const OAuth = () => {
       navigate("/", { replace: true });
       window.location.reload();
     }
-  }, [searchParams, setAccessToken]);
+  }, [navigate, searchParams, setAccessToken]);
 
   return <div>OAuth Component</div>;
 };

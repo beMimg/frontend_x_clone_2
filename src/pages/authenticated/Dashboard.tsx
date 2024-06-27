@@ -29,7 +29,7 @@ export default function Dashboard() {
       }
     };
     getPosts();
-  }, [rerender]);
+  }, [axiosPrivate, rerender]);
 
   return (
     <main className="h-full overflow-auto">

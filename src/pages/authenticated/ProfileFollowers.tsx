@@ -27,7 +27,7 @@ const ProfileFollowers = () => {
       }
     };
     getFollowers();
-  }, []);
+  }, [axiosPrivate, visited_id]);
 
   if (error) {
     return (

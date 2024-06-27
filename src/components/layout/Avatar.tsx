@@ -15,6 +15,7 @@ const Avatar = ({ user, size }: { user: IUser; size: string }) => {
           maxWidth: size,
           minHeight: size,
         }}
+        alt="user profile"
       />
     </div>
   ) : (
