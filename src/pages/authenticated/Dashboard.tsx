@@ -1,35 +1,52 @@
 import { useEffect, useState } from "react";
 import useAxiosPrivate from "../../api/useAxiosPrivate";
-// import DashboardHeader from "../../components/common/DashboardHeader";
 import { IoMdCreate } from "react-icons/io";
 import { useUser } from "../../context/userContext";
 import DashboardHeader from "../../components/dashboard/DashboardHeader";
 import Post from "../../components/post/Post";
+import ErrorText from "../../components/feedback/ErrorText";
+import LoadingSpinner from "../../components/feedback/LoadingSpinner";
+import CreatePostModal from "../../components/modals/CreatePostModal";
 
 export default function Dashboard() {
-  const { user, loading, error } = useUser();
+  const { user } = useUser();
   const [posts, setPosts] = useState<any[]>([]);
   const [isCreatePostOpen, setIsCreatePostOpen] = useState(false);
   const [rerender, setRerender] = useState(0);
-  const [errors, setErrors] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const axiosPrivate = useAxiosPrivate();
 
   useEffect(() => {
     const getPosts = async () => {
       try {
-        setIsLoading(true);
+        setLoading(true);
         const response = await axiosPrivate.get("/posts");
         setPosts(response.data.posts);
       } catch (err) {
-        setErrors(true);
+        setError(true);
       } finally {
-        setIsLoading(false);
+        setLoading(false);
       }
     };
     getPosts();
   }, [axiosPrivate, rerender]);
+
+  if (error) {
+    return (
+      <div className="p-4">
+        <ErrorText text="Something went wrong" />
+      </div>
+    );
+  }
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center p-4">
+        <LoadingSpinner color="blue" size="30px" />
+      </div>
+    );
+  }
 
   return (
     <main className="h-full overflow-auto">
@@ -55,13 +72,7 @@ export default function Dashboard() {
       </button>
       {/* This only works for small devices since this button is small device only.
        */}
-      {/* {isCreatePostOpen && (
-        <CreatePostModal
-          setIsCreatePostOpen={setIsCreatePostOpen}
-          user={user}
-          setRerender={setRerender}
-        />
-      )} */}
+      {isCreatePostOpen && <CreatePostModal setRerender={setRerender} />}
     </main>
   );
 }

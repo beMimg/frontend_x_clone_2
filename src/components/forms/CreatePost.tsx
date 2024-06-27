@@ -7,7 +7,9 @@ import ErrorText from "../feedback/ErrorText";
 
 const CreatePost = ({
   setRerender,
+  close,
 }: {
+  close: boolean;
   setRerender: React.Dispatch<React.SetStateAction<number>>;
 }) => {
   const [text, setText] = useState("");
@@ -28,6 +30,9 @@ const CreatePost = ({
         if (response.status === 200) {
           setText("");
           setRerender((prevRender) => prevRender + 1);
+          if (close) {
+            window.location.reload();
+          }
           return;
         }
       } else {
@@ -43,7 +48,9 @@ const CreatePost = ({
           setText("");
           setRerender((prevRender) => prevRender + 1);
           deleteImage();
-
+          if (close) {
+            window.location.reload();
+          }
           return;
         }
       }

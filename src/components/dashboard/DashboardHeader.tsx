@@ -24,7 +24,7 @@ const DashboardHeader = ({
           <div className="flex self-start">
             <Avatar user={user} size="40px" />
           </div>
-          <CreatePost setRerender={setRerender} />
+          <CreatePost setRerender={setRerender} close={false} />
         </div>
       </div>
     </div>
