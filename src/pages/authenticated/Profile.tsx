@@ -3,15 +3,13 @@ import { IoMdArrowBack } from "react-icons/io";
 import useAxiosPrivate from "../../api/useAxiosPrivate";
 import { IoMdCalendar } from "react-icons/io";
 import { NavLink, Outlet, Link, useParams } from "react-router-dom";
-// import FollowBtn from "../../components/buttons/FollowBtn";
-// import EditProfileBtn from "../../components/buttons/EditProfileBtn";
 import LoadingSpinner from "../../components/feedback/LoadingSpinner";
 import LogoutModal from "../../components/modals/LogoutModal";
 import Avatar from "../../components/layout/Avatar";
 import { IUser } from "../../interfaces/User.interface";
 import { useUser } from "../../context/userContext";
 import EditProfileButton from "../../components/buttons/EditProfileButton";
-
+import FollowButton from "../../components/buttons/FollowButton";
 const Profile = () => {
   const [visitedUser, setVisitedUser] = useState<IUser | undefined>(undefined);
   const [loading, setLoading] = useState(false);
@@ -39,6 +37,7 @@ const Profile = () => {
     getUser();
   }, [visited_id, rerender]);
 
+  console.log(rerender);
   const notActiveStyle = "text-gray-500 p-2";
   const activeStyle =
     "text-white border-b-[4px] border-sky-500 font-semibold p-2 ";
@@ -70,12 +69,11 @@ const Profile = () => {
             {user._id === visitedUser._id ? (
               <EditProfileButton user={user} />
             ) : (
-              // <FollowBtn
-              //   user={visitedUser}
-              //   user={user}
-              //   setRerender={setRerender}
-              // />
-              <p>lol</p>
+              <FollowButton
+                visitedUser={visitedUser}
+                user={user}
+                setRerender={setRerender}
+              />
             )}
             {/* Logout for smaller<lg devices */}
             <button

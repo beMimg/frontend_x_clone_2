@@ -5,6 +5,6 @@ export interface IUser {
   username: string;
   profile_color: string;
   utc_creation: string;
-  followings: [];
-  followers: [];
+  followings: string[];
+  followers: string[];
 }

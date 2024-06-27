@@ -122,7 +122,7 @@ const CreatePost = ({
           {/* If it's loading, content inside the button must be the loadingspinner otherwise "Post" */}
           <button
             onClick={handleSubmit}
-            disabled={disabledButton || loading}
+            disabled={disabledButton || loading || charactersLeft === 300}
             className="sky-button max-w-[200px] disabled:cursor-not-allowed"
           >
             {loading ? (
