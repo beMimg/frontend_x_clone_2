@@ -7,7 +7,7 @@ const NavSmallDevices = ({ user }: { user: IUser }) => {
     "w-full flex items-center justify-center border-r  border-gray-900 h-full";
 
   return (
-    <div className="grid w-full grid-cols-3 items-center justify-items-center border-t border-gray-900 bg-black text-2xl text-white">
+    <div className="z-40 grid w-full grid-cols-3 items-center justify-items-center border-t border-gray-900 bg-black text-2xl text-white">
       <Link to="/" className={LinkStyle}>
         <GoHome />
       </Link>

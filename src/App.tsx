@@ -11,6 +11,7 @@ import ProfileLikes from "./pages/authenticated/ProfileLikes";
 import ProfileFollowings from "./pages/authenticated/ProfileFollowings";
 import ProfileFollowers from "./pages/authenticated/ProfileFollowers";
 import PostPage from "./pages/authenticated/PostPage";
+import Explore from "./pages/authenticated/Explore";
 
 function App() {
   const { accessToken } = useAuth();
@@ -35,6 +36,7 @@ function App() {
                 <Route path="followers" element={<ProfileFollowers />} />
               </Route>
               <Route path="/posts/:post_id" element={<PostPage />} />
+              <Route path="/explore/:page" element={<Explore />} />
             </Route>
           </>
         )}
