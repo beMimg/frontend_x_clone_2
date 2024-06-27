@@ -15,12 +15,15 @@ const GuestLoginButton = () => {
   async function handleGuest() {
     try {
       setLoading(true);
+      setError(false);
       const response = await axios.post("/auth/guest");
+      console.log(response);
       if (response.status === 200) {
-        const accessToken = response.data.token;
+        const accessToken = response.data.accessToken;
         setAccessToken(accessToken);
+        navigate("/", { replace: true });
+        window.location.reload();
       }
-      navigate("/", { replace: true });
     } catch (err) {
       setError(true);
     } finally {
