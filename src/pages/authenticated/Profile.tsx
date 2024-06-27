@@ -11,6 +11,7 @@ import { useUser } from "../../context/userContext";
 import EditProfileButton from "../../components/buttons/EditProfileButton";
 import FollowButton from "../../components/buttons/FollowButton";
 import ErrorText from "../../components/feedback/ErrorText";
+
 const Profile = () => {
   const [visitedUser, setVisitedUser] = useState<IUser | undefined>(undefined);
   const [loading, setLoading] = useState(false);
