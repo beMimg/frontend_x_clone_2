@@ -1,46 +1,51 @@
-# Getting Started with Create React App
+# X_CLONE Documentation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the documentation for X Clone! X Clone is a social media platform inspired by X, designed to foster social interactions and sharing within a community. Below you'll find an overview of the project, its features and technologies used.
 
-## Available Scripts
+## Live Preview
 
-In the project directory, you can run:
+Experience X Clone in action: [Live Preview](https://x-clone-bemimg.netlify.app/)
 
-### `npm start`
+## Backend Repository
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Explore the backend codebase on GitHub: [X Clone Backend](https://github.com/beMimg/backend_x_clone)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Screenshots
 
-### `npm test`
+Take a glimpse at X Clone's interface:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Screenshot 2024-04-23 171701](https://github.com/beMimg/frontend_x_clone/assets/126000960/e9d04d8c-30ea-4182-a683-7d759cd5df81)
 
-### `npm run build`
+![x_clone](https://github.com/beMimg/frontend_x_clone/assets/126000960/3b1cc42b-b526-4e08-ad1d-131091643bba)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Overview
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+X Clone is a social media platform inspired by X, built with React on the front end and Node.js, Express, and MongoDB on the back end. The app allows users to create accounts, post with images, follow other users, and engage in other social interactions.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Key Features
 
-### `npm run eject`
+X Clone offers the following key features:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- **Authentication**: Users can create an account, log in with GitHub, or sign in as a guest.
+- **User Profiles**: Users can edit their profiles, view their posts and likes, followers, and following list.
+- **Social Interactions**: Users can post messages, follow/unfollow other users, comment on posts, and like posts.
+- **Multimedia Support**: Users can include images in their posts.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Technologies Used
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The following technologies are used to build X Clone:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- **Frontend**: React, Tailwind CSS
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB, Mongoose
+- **Deployment**: Railway, Netlify
 
-## Learn More
+## Frontend Overview
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- X Clone uses React for the front end, with Tailwind CSS for styling.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Backend Overview
+
+- X Clone uses Node.js and Express.js for the server-side application. It communicates with MongoDB via Mongoose.
+- Authentication via Passport.js for OAuth and JWT.
+- Integration of multimedia content via Cloudinary.
