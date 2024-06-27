@@ -9,6 +9,7 @@ import Profile from "./pages/authenticated/Profile";
 import { ProfilePosts } from "./pages/authenticated/ProfilePosts";
 import ProfileLikes from "./pages/authenticated/ProfileLikes";
 import ProfileFollowings from "./pages/authenticated/ProfileFollowings";
+import ProfileFollowers from "./pages/authenticated/ProfileFollowers";
 
 function App() {
   const { accessToken } = useAuth();
@@ -30,7 +31,7 @@ function App() {
                 <Route index element={<ProfilePosts />} />
                 <Route path="likes" element={<ProfileLikes />} />
                 <Route path="following" element={<ProfileFollowings />} />
-                {/* <Route path="followers" element={<ProfileFollowers />} /> */}
+                <Route path="followers" element={<ProfileFollowers />} />
               </Route>
             </Route>
           </>
