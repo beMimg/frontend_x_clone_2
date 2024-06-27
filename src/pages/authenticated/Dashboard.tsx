@@ -5,7 +5,6 @@ import { useUser } from "../../context/userContext";
 import DashboardHeader from "../../components/dashboard/DashboardHeader";
 import Post from "../../components/post/Post";
 import ErrorText from "../../components/feedback/ErrorText";
-import LoadingSpinner from "../../components/feedback/LoadingSpinner";
 import CreatePostModal from "../../components/modals/CreatePostModal";
 
 export default function Dashboard() {
@@ -14,20 +13,16 @@ export default function Dashboard() {
   const [isCreatePostOpen, setIsCreatePostOpen] = useState(false);
   const [rerender, setRerender] = useState(0);
   const [error, setError] = useState(false);
-  const [loading, setLoading] = useState(false);
 
   const axiosPrivate = useAxiosPrivate();
 
   useEffect(() => {
     const getPosts = async () => {
       try {
-        setLoading(true);
         const response = await axiosPrivate.get("/posts");
         setPosts(response.data.posts);
       } catch (err) {
         setError(true);
-      } finally {
-        setLoading(false);
       }
     };
     getPosts();
@@ -37,13 +32,6 @@ export default function Dashboard() {
     return (
       <div className="p-4">
         <ErrorText text="Something went wrong" />
-      </div>
-    );
-  }
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center p-4">
-        <LoadingSpinner color="blue" size="30px" />
       </div>
     );
   }

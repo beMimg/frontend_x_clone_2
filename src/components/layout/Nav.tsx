@@ -8,7 +8,7 @@ const Nav = ({ user }: { user: IUser }) => {
       <div className="hidden h-full w-full lg:flex">
         <NavLargeDevices user={user} />
       </div>
-      <div className="absolute bottom-0 left-0 flex h-[60px] w-full lg:hidden">
+      <div className="fixed bottom-0 left-0 z-50 flex h-[60px] w-full lg:hidden">
         <NavSmallDevices user={user} />
       </div>
     </nav>
