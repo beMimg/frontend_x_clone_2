@@ -50,7 +50,7 @@ const ProfileFollowers = () => {
 
   return (
     <div className="flex flex-col gap-6 p-4">
-      <h1 className="text-xl font-semibold">Followers</h1>
+      <h6>Followers</h6>
       {followers &&
         followers.length > 0 &&
         followers.map((user) => <UserCard user={user} key={user._id} />)}

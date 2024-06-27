@@ -16,7 +16,7 @@ const LogoutModal = ({
 
   return (
     <div className="absolute left-0 top-0 z-40 flex h-screen w-screen items-center justify-center bg-gray-800">
-      <section className="flex max-w-[300px] flex-col gap-4 rounded-xl bg-black p-8">
+      <div className="flex max-w-[300px] flex-col gap-4 rounded-xl bg-black p-8">
         <h1 className="self-center">X</h1>
         <div className="flex flex-col gap-2">
           <h4 className="">Log out of X?</h4>
@@ -33,7 +33,7 @@ const LogoutModal = ({
         >
           Cancel
         </button>
-      </section>
+      </div>
     </div>
   );
 };

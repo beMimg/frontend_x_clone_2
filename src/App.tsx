@@ -10,6 +10,7 @@ import { ProfilePosts } from "./pages/authenticated/ProfilePosts";
 import ProfileLikes from "./pages/authenticated/ProfileLikes";
 import ProfileFollowings from "./pages/authenticated/ProfileFollowings";
 import ProfileFollowers from "./pages/authenticated/ProfileFollowers";
+import PostPage from "./pages/authenticated/PostPage";
 
 function App() {
   const { accessToken } = useAuth();
@@ -33,6 +34,7 @@ function App() {
                 <Route path="following" element={<ProfileFollowings />} />
                 <Route path="followers" element={<ProfileFollowers />} />
               </Route>
+              <Route path="/posts/:post_id" element={<PostPage />} />
             </Route>
           </>
         )}
