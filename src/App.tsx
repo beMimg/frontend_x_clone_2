@@ -6,6 +6,7 @@ import { useAuth } from "./context/authContext";
 import { Layout } from "./pages/authenticated/Layout";
 import Dashboard from "./pages/authenticated/Dashboard";
 import Profile from "./pages/authenticated/Profile";
+import { ProfilePosts } from "./components/profile/ProfilePosts";
 
 function App() {
   const { accessToken } = useAuth();
@@ -23,7 +24,9 @@ function App() {
           <>
             <Route element={<Layout />}>
               <Route path="/" element={<Dashboard />} />
-              <Route path="/profile/:visited_id" element={<Profile />} />
+              <Route path="/profile/:visited_id" element={<Profile />}>
+                <Route index element={<ProfilePosts />} />
+              </Route>
             </Route>
           </>
         )}

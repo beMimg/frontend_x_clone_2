@@ -10,6 +10,7 @@ import { IUser } from "../../interfaces/User.interface";
 import { useUser } from "../../context/userContext";
 import EditProfileButton from "../../components/buttons/EditProfileButton";
 import FollowButton from "../../components/buttons/FollowButton";
+import ErrorText from "../../components/feedback/ErrorText";
 const Profile = () => {
   const [visitedUser, setVisitedUser] = useState<IUser | undefined>(undefined);
   const [loading, setLoading] = useState(false);
@@ -37,7 +38,6 @@ const Profile = () => {
     getUser();
   }, [visited_id, rerender]);
 
-  console.log(rerender);
   const notActiveStyle = "text-gray-500 p-2";
   const activeStyle =
     "text-white border-b-[4px] border-sky-500 font-semibold p-2 ";
@@ -49,6 +49,7 @@ const Profile = () => {
       </div>
     );
   }
+
   return (
     <main className="overflow-auto">
       {visitedUser && user ? (
@@ -149,7 +150,7 @@ const Profile = () => {
       ) : (
         errors && (
           <div className="flex h-full w-full items-center justify-center">
-            <p>Something went wrong...</p>
+            <ErrorText text="Something went wrong" />
           </div>
         )
       )}

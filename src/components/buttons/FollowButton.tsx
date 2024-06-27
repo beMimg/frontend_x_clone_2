@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import useAxiosPrivate from "../../api/useAxiosPrivate";
 import { IUser } from "../../interfaces/User.interface";
+import ErrorText from "../feedback/ErrorText";
 
 const FollowButton = ({
   visitedUser,
@@ -13,6 +14,7 @@ const FollowButton = ({
 }) => {
   const [hovered, setHovered] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
   const [isFollowed, setIsFollowed] = useState(
     visitedUser.followers.includes(user._id),
   );
@@ -22,6 +24,7 @@ const FollowButton = ({
   const handleFollow = async () => {
     try {
       setLoading(true);
+      setError(false);
       if (isFollowed) {
         await axiosPrivate.delete(`/users/follow/${visitedUser._id}`);
       } else {
@@ -30,12 +33,15 @@ const FollowButton = ({
       setRerender((prevRender) => prevRender + 1);
       setIsFollowed(!isFollowed);
     } catch (err) {
-      console.error(err);
+      setError(true);
     } finally {
       setLoading(false);
     }
   };
 
+  if (error) {
+    return <ErrorText text="Something went wrong" />;
+  }
   return (
     <button
       onClick={handleFollow}
