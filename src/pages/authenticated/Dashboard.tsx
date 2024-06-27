@@ -21,7 +21,6 @@ export default function Dashboard() {
       try {
         setIsLoading(true);
         const response = await axiosPrivate.get("/posts");
-        console.log(response);
         setPosts(response.data.posts);
       } catch (err) {
         setErrors(true);

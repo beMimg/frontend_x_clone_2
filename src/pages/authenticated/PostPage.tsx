@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import useAxiosPrivate from "../../api/useAxiosPrivate";
-// import PostInterectionBar from "../../components/common/PostInterectionBar";
-// import PostComments from "../../components/common/PostComments";
-// import CommentForm from "../../components/forms/CommentForm";
 import formatDate from "../../utils/formatDate";
 import Avatar from "../../components/layout/Avatar";
 import LoadingSpinner from "../../components/feedback/LoadingSpinner";
@@ -11,6 +8,8 @@ import { useUser } from "../../context/userContext";
 import PostInteractionBar from "../../components/post/PostInteractionBar";
 import CommentForm from "../../components/forms/CommentForm";
 import { IPost } from "../../interfaces/Post.interface";
+import PostComments from "../../components/post/PostComments";
+import ErrorText from "../../components/feedback/ErrorText";
 
 const PostPage = () => {
   const [post, setPost] = useState<IPost | undefined>(undefined);
@@ -41,9 +40,24 @@ const PostPage = () => {
     getPost();
   }, [rerender]);
 
+  if (error) {
+    return (
+      <div className="p-4">
+        <ErrorText text="Something went wrong" />
+      </div>
+    );
+  }
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center p-4">
+        <LoadingSpinner color="blue" size="30px" />
+      </div>
+    );
+  }
+
   return (
-    <main className="flex flex-col gap-3 overflow-auto">
-      {post && user ? (
+    <main className="flex flex-col overflow-auto">
+      {post && user && (
         <>
           <div className="flex flex-col gap-4 px-4 pt-4">
             <Link
@@ -79,23 +93,13 @@ const PostPage = () => {
             setRerenderOnlyComments={setRerenderOnlyComments}
           />
 
-          {/* <PostComments
+          <PostComments
             post_id={post_id}
             rerenderOnlyComments={rerenderOnlyComments}
             user={user}
             setRerenderOnlyComments={setRerenderOnlyComments}
-          /> */}
+          />
         </>
-      ) : loading ? (
-        <div className="flex h-full w-full items-center justify-center">
-          <LoadingSpinner color="blue" size={"50px"} />
-        </div>
-      ) : (
-        error && (
-          <div className="flex h-full w-full items-center justify-center">
-            <p>Something went wrong...</p>
-          </div>
-        )
       )}
     </main>
   );

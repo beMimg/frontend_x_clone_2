@@ -140,7 +140,7 @@ const Profile = () => {
                     isActive ? activeStyle : notActiveStyle
                   }
                 >
-                  Likes
+                  Post Likes
                 </NavLink>
               </NavLink>
             </nav>
