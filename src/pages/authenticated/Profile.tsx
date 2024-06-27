@@ -55,7 +55,7 @@ const Profile = () => {
       {visitedUser && user ? (
         <>
           <div className="flex flex-row gap-10 p-2">
-            <Link to="/dashboard" className="flex items-center">
+            <Link to="/" className="flex items-center">
               <IoMdArrowBack className="ml-4 text-2xl" />
             </Link>
             <h3>{visitedUser.first_name}</h3>
