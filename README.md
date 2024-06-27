@@ -35,7 +35,7 @@ X Clone offers the following key features:
 
 The following technologies are used to build X Clone:
 
-- **Frontend**: React, Tailwind CSS
+- **Frontend**: React, Typescript, Tailwind CSS
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB, Mongoose
 - **Deployment**: Railway, Netlify
