@@ -12,6 +12,7 @@ import ProfileFollowings from "./pages/authenticated/ProfileFollowings";
 import ProfileFollowers from "./pages/authenticated/ProfileFollowers";
 import PostPage from "./pages/authenticated/PostPage";
 import Explore from "./pages/authenticated/Explore";
+import OAuth from "./pages/unauthenticated/OAuth";
 
 function App() {
   const { accessToken } = useAuth();
@@ -24,6 +25,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/oauth" element={<OAuth />} />
           </>
         ) : (
           <>

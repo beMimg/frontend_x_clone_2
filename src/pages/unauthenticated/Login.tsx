@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import DivisionOr from "../../components/layout/DivisionOr";
 import LoginForm from "../../components/forms/LoginForm";
 import GuestLoginButton from "../../components/buttons/GuestLoginButton";
+import GithubLoginLink from "../../components/buttons/GithubLogin";
 
 const Login = () => {
   return (
@@ -12,6 +13,7 @@ const Login = () => {
         </Link>
         <h2>Login to X</h2>
         <div className="w-[70%]">
+          <GithubLoginLink />
           <GuestLoginButton />
         </div>
         <div className="w-[70%]">

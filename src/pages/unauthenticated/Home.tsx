@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import GuestLoginButton from "../../components/buttons/GuestLoginButton";
 import DivisionOr from "../../components/layout/DivisionOr";
+import GithubLoginLink from "../../components/buttons/GithubLogin";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
         <h1>Happening now</h1>
         <h2>Join today.</h2>
         <div className="flex w-full flex-col items-center gap-4 lg:w-[400px]">
+          <GithubLoginLink />
           <GuestLoginButton />
           <DivisionOr />
           <div className="flex w-full flex-col items-center gap-1">
