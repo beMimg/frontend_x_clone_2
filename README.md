@@ -14,9 +14,9 @@ Explore the backend codebase on GitHub: [X Clone Backend](https://github.com/beM
 
 Take a glimpse at X Clone's interface:
 
-![Screenshot 2024-04-23 171701](https://github.com/beMimg/frontend_x_clone/assets/126000960/e9d04d8c-30ea-4182-a683-7d759cd5df81)
+![x-clone-bemimg netlify app_](https://github.com/beMimg/x-clone-frontend/assets/126000960/0ba08d25-5bad-437e-92cc-7dbfa0a3e051)
 
-![x_clone](https://github.com/beMimg/frontend_x_clone/assets/126000960/3b1cc42b-b526-4e08-ad1d-131091643bba)
+![x-clone-bemimg netlify app_(iPhone 14 Pro Max) (1)](https://github.com/beMimg/x-clone-frontend/assets/126000960/399fdac5-da77-4556-958b-e47255fc17ae)
 
 ## Overview
 
