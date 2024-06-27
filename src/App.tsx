@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import Home from "./pages/unauthenticated/Home";
 import Login from "./pages/unauthenticated/Login";
 import Register from "./pages/unauthenticated/Register";
@@ -26,6 +26,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/oauth" element={<OAuth />} />
+            <Route path="*" element={<Navigate to="/" replace />} />{" "}
           </>
         ) : (
           <>
@@ -39,6 +40,8 @@ function App() {
               </Route>
               <Route path="/posts/:post_id" element={<PostPage />} />
               <Route path="/explore/:page" element={<Explore />} />
+              <Route path="*" element={<Navigate to="/" replace />} />{" "}
+              {/* Redirect to home for authenticated users */}
             </Route>
           </>
         )}
