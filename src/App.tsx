@@ -41,7 +41,6 @@ function App() {
               <Route path="/posts/:post_id" element={<PostPage />} />
               <Route path="/explore/:page" element={<Explore />} />
               <Route path="*" element={<Navigate to="/" replace />} />{" "}
-              {/* Redirect to home for authenticated users */}
             </Route>
           </>
         )}
