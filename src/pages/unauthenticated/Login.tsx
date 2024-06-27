@@ -12,7 +12,7 @@ const Login = () => {
           x
         </Link>
         <h2>Login to X</h2>
-        <div className="w-[70%]">
+        <div className="flex w-[70%] flex-col gap-4">
           <GithubLoginLink />
           <GuestLoginButton />
         </div>
