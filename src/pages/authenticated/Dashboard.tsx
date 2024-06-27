@@ -40,13 +40,6 @@ export default function Dashboard() {
       </div>
     );
   }
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center p-4">
-        <LoadingSpinner color="blue" size="30px" />
-      </div>
-    );
-  }
 
   return (
     <main className="h-full overflow-auto">
