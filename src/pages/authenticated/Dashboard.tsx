@@ -60,7 +60,12 @@ export default function Dashboard() {
       </button>
       {/* This only works for small devices since this button is small device only.
        */}
-      {isCreatePostOpen && <CreatePostModal setRerender={setRerender} />}
+      {isCreatePostOpen && (
+        <CreatePostModal
+          setIsCreatePostOpen={setIsCreatePostOpen}
+          setRerender={setRerender}
+        />
+      )}
     </main>
   );
 }
