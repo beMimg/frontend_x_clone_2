@@ -42,7 +42,7 @@ The following technologies are used to build X Clone:
 
 ## Frontend Overview
 
-- X Clone uses React for the front end, with Tailwind CSS for styling.
+- X Clone uses React with TypeScript for the front end, with Tailwind CSS for styling.
 
 ## Backend Overview
 
