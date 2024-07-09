@@ -13,7 +13,7 @@ const DashboardHeader = ({
 }) => {
   return (
     <div className="flex w-full flex-col">
-      <div className="grid w-full lg:grid-cols-2">
+      <div className="grid w-full p-2 py-4 lg:grid-cols-2">
         <button className="border-b-2 border-sky-500 pb-1">For you</button>
         <button className="secondary-text hidden cursor-not-allowed lg:block">
           Following
