@@ -41,7 +41,8 @@ const useAxiosPrivate = () => {
         // the access token is refreshed and the request is retried.
         if (error.response.status === 401 && !prevRequest.sent) {
           prevRequest.sent = true;
-          console.log("now");
+          localStorage.removeItem("accessToken");
+          window.location.reload();
         }
         // If the error status is not 401 or the request has already been retried,
         // a rejected Promise with the error is returned.
